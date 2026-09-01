@@ -89,7 +89,6 @@ include_once 'include/header.php';
                                         <i class="fas fa-align-left me-1"></i>Description
                                     </label>
                                     <textarea class="form-control" id="room_description" name="room_description" rows="4" placeholder="Add room amenities, features, and other details..."></textarea>
-                                    <small class="form-text text-muted">Describe the room features and amenities</small>
                                 </div>
 
                                 <!-- Form Actions -->
@@ -98,9 +97,7 @@ include_once 'include/header.php';
                                         <button type="submit" class="btn btn-primary-custom flex-grow-1">
                                             <i class="fas fa-check me-2"></i>Add Room
                                         </button>
-                                        <button type="reset" class="btn btn-secondary-custom">
-                                            <i class="fas fa-times me-2"></i>Cancel
-                                        </button>
+                                        
                                     </div>
                                 </div>
                             </div>

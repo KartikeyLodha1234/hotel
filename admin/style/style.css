@@ -372,7 +372,7 @@ body {
     border-radius: 0.5rem;
     font-weight: 500;
     transition: all 0.2s;
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .btn-primary-custom:hover {
