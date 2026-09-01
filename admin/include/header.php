@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Management · Side Nav</title>
+    <title>Hotel Management · Add Room</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div class="demo-wrapper">
+    <!-- ===== SIDE NAV ===== -->
     <nav class="side-nav" id="sideNav">
         <div class="brand">
             <span><i class="fas fa-hotel me-2"></i>Hotel Management</span>
@@ -23,10 +24,9 @@
                 <div class="nav-label">Main</div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                        <a class="nav-link" href="index.php"><i class="fas fa-chart-pie"></i> Dashboard</a>
                     </li>
 
-                    <!-- Reservations Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="reservationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-calendar-check"></i> Reservations
@@ -39,7 +39,6 @@
                         </ul>
                     </li>
 
-                    <!-- Guests Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="guestsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-users"></i> Guests
@@ -51,19 +50,17 @@
                         </ul>
                     </li>
 
-                    <!-- Rooms Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="roomsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle show" href="#" id="roomsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                             <i class="fas fa-bed"></i> Rooms
                             <i class="fas fa-chevron-down"></i>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="roomsDropdown">
-                            <li><a class="dropdown-item" href="addroom.php"><i class="fas fa-tag"></i> Room Types</a></li>
+                        <ul class="dropdown-menu show" aria-labelledby="roomsDropdown">
+                            <li><a class="dropdown-item active" href="addroom.php"><i class="fas fa-tag"></i> Room Types</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fas fa-info-circle"></i> Room Status</a></li>
                         </ul>
                     </li>
 
-                    <!-- Bookings Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="bookingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-book-open"></i> Bookings
@@ -76,7 +73,6 @@
                         </ul>
                     </li>
 
-                    <!-- Housekeeping Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="housekeepingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-broom"></i> Housekeeping
@@ -89,7 +85,6 @@
                         </ul>
                     </li>
 
-                    <!-- Staff Management Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="staffDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user-tie"></i> Staff Management
@@ -102,7 +97,6 @@
                         </ul>
                     </li>
 
-                    <!-- Reports Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="reportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-file-alt"></i> Reports
@@ -115,7 +109,6 @@
                         </ul>
                     </li>
 
-                    <!-- Settings Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-cog"></i> Settings
@@ -139,45 +132,3 @@
             </div>
         </div>
     </nav>
-
-    <!-- Main content area - empty -->
-    <main class="demo-content" id="mainContent"></main>
-</div>
-
-<!-- Bootstrap 5.3.8 JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-<!-- Mobile toggle & navigation script -->
-<script>
-    (function() {
-        const toggleBtn = document.getElementById('menuToggle');
-        const collapseWrap = document.getElementById('navCollapse');
-        if (toggleBtn && collapseWrap) {
-            toggleBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                collapseWrap.classList.toggle('show');
-                const icon = toggleBtn.querySelector('i');
-                if (icon) {
-                    if (collapseWrap.classList.contains('show')) {
-                        icon.className = 'fas fa-times';
-                    } else {
-                        icon.className = 'fas fa-bars';
-                    }
-                }
-            });
-
-            const navLinks = collapseWrap.querySelectorAll('.nav-link:not(.dropdown-toggle)');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768 && collapseWrap.classList.contains('show')) {
-                        collapseWrap.classList.remove('show');
-                        const icon = toggleBtn.querySelector('i');
-                        if (icon) icon.className = 'fas fa-bars';
-                    }
-                });
-            });
-        }
-    })();
-</script>
-</body>
-</html>
