@@ -1,0 +1,246 @@
+/* ============================================
+   HOTEL MANAGEMENT SIDE NAV - CSS ONLY
+   Compatible with Bootstrap 5.3.8
+   ============================================ */
+
+/* ---------- BASE ---------- */
+body {
+    background: #f4f6f9;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- SIDE NAV CONTAINER ---------- */
+.side-nav {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0b2b40 0%, #1a3b4f 100%);
+    width: 280px;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1050;
+}
+
+/* ---------- BRAND / LOGO ---------- */
+.side-nav .brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-size: 1.4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.side-nav .brand i {
+    color: #f7c948;
+}
+
+/* ---------- NAV SECTION LABEL ---------- */
+.side-nav .nav-section {
+    margin-top: 1.2rem;
+}
+.side-nav .nav-section .nav-label {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    padding-left: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+/* ---------- NAV LINKS ---------- */
+.side-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.15rem;
+    transition: all 0.15s;
+    font-weight: 450;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.side-nav .nav-link i {
+    width: 1.8rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+.side-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.side-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    box-shadow: inset 3px 0 0 #f7c948;
+}
+
+/* ---------- DROPDOWN (no double arrow) ---------- */
+.side-nav .dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Dropdown menu - inline, no overlay */
+.side-nav .dropdown-menu {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+    margin-top: 0.1rem;
+    backdrop-filter: blur(4px);
+    position: relative !important;
+    width: 100%;
+    float: none;
+    box-shadow: none;
+    transform: none !important;
+    inset: auto !important;
+}
+.side-nav .dropdown-menu .dropdown-item {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.4rem 1.2rem 0.4rem 2.8rem;
+    font-size: 0.85rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    display: block;
+}
+.side-nav .dropdown-menu .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+.side-nav .dropdown-menu .dropdown-item i {
+    width: 1.4rem;
+    margin-right: 0.3rem;
+}
+
+/* Chevron icon on dropdown toggle */
+.side-nav .nav-link[data-bs-toggle="dropdown"] {
+    cursor: pointer;
+}
+.side-nav .nav-link[data-bs-toggle="dropdown"] i.fa-chevron-down {
+    margin-left: auto;
+    font-size: 0.6rem;
+    opacity: 0.6;
+    transition: transform 0.2s;
+}
+.side-nav .nav-link[data-bs-toggle="dropdown"][aria-expanded="true"] i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Force dropdown inside sidebar */
+.side-nav .dropdown {
+    position: relative;
+}
+.side-nav .dropdown-menu.show {
+    position: relative !important;
+    transform: none !important;
+    inset: auto !important;
+}
+
+/* ---------- DIVIDER ---------- */
+.side-nav .divider {
+    border-color: rgba(255, 255, 255, 0.06);
+    margin: 0.8rem 0;
+}
+
+/* ---------- FOOTER ---------- */
+.side-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.75rem;
+}
+.side-footer .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3dd68c;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* ---------- MOBILE TOGGLE ---------- */
+.side-nav .menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 0.2rem 0.8rem;
+}
+
+/* ---------- RESPONSIVE (max-width: 767.98px) ---------- */
+@media (max-width: 767.98px) {
+    .side-nav {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        position: relative;
+        padding: 1rem 1.2rem;
+        z-index: 1050;
+    }
+    .side-nav .menu-toggle {
+        display: block;
+    }
+    .side-nav .brand {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .side-nav .nav-collapse-wrap {
+        display: none;
+    }
+    .side-nav .nav-collapse-wrap.show {
+        display: block;
+    }
+    .side-nav .side-footer {
+        margin-top: 1.5rem;
+    }
+    .side-nav .dropdown-menu {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: none;
+        position: relative !important;
+        width: 100%;
+        margin-top: 0.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .side-nav .dropdown-menu .dropdown-item {
+        padding-left: 2.8rem;
+    }
+}
+
+/* ---------- LAYOUT WRAPPER ---------- */
+.demo-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+.demo-content {
+    flex: 1;
+    background: #f4f6f9;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 767.98px) {
+    .demo-wrapper {
+        flex-direction: column;
+    }
+    .demo-content {
+        padding: 1.5rem;
+    }
+}
+
+/* ---------- BOOTSTRAP OVERRIDES ---------- */
+.dropdown-menu {
+    position: relative !important;
+    transform: none !important;
+    inset: auto !important;
+}
