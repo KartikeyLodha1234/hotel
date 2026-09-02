@@ -32,14 +32,14 @@
             <ul class="nav flex-column">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="index.php" class="nav-link active">
                         <i class="bi bi-speedometer2"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#roomMenu"
+                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#roomMenu"
                         aria-expanded="false">
                         <i class="bi bi-house-door"></i>
                         <span>Room Management</span>
@@ -55,7 +55,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#staffMenu"
+                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#staffMenu"
                         aria-expanded="false">
                         <i class="bi bi-people-fill"></i>
                         <span>Staff Management</span>
@@ -63,29 +63,29 @@
                     </a>
                     <div class="collapse" id="staffMenu">
                         <ul class="nav flex-column sub-menu">
-                            <li><a href="#">Add Staff</a></li>
-                            <li><a href="#">Staff List</a></li>
-                            <li><a href="#">Roles</a></li>
+                            <li><a href="staff_add.php">Add Staff</a></li>
+                            <li><a href="staff_list.php">Staff List</a></li>
+                            <li><a href="staff_roles.php">Roles</a></li>
                         </ul>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="booking.php" class="nav-link">
                         <i class="bi bi-calendar-check"></i>
                         <span>Booking/Reservation</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="expenses.php" class="nav-link">
                         <i class="bi bi-wallet2"></i>
                         <span>Expenses</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#reportsMenu"
+                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#reportsMenu"
                         aria-expanded="false">
                         <i class="bi bi-bar-chart"></i>
                         <span>Reports</span>
@@ -93,9 +93,9 @@
                     </a>
                     <div class="collapse" id="reportsMenu">
                         <ul class="nav flex-column sub-menu">
-                            <li><a href="#">Daily</a></li>
-                            <li><a href="#">Monthly</a></li>
-                            <li><a href="#">Financial</a></li>
+                            <li><a href="reports_daily.php">Daily</a></li>
+                            <li><a href="reports_monthly.php">Monthly</a></li>
+                            <li><a href="reports_financial.php">Financial</a></li>
                         </ul>
                     </div>
                 </li>
@@ -108,13 +108,12 @@
                         <span>Settings</span>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link logout">
-                        <i class="bi bi-box-arrow-right"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
+   <li class="nav-item">
+                <a href="#" class="nav-link logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
 
             </ul>
 
@@ -122,17 +121,6 @@
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
-                toggle.addEventListener('click', function() {
-                    const indicator = this.querySelector('.dropdown-indicator');
-                    if (!indicator) return;
-                    const expanded = this.getAttribute('aria-expanded') === 'true';
-                    indicator.classList.toggle('bi-chevron-down', !expanded);
-                    indicator.classList.toggle('bi-chevron-up', expanded);
-                });
-            });
-        </script>
 
     </body>
 
