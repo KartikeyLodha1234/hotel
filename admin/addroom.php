@@ -39,7 +39,6 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <button type="reset" class="btn btn-secondary">Clear</button>
                         <button type="submit" class="btn btn-primary">Add Room</button>
                     </div>
                 </div>
