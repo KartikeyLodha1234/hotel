@@ -8,12 +8,10 @@
     <title>Hotel management</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="style/Style.css">
@@ -26,8 +24,8 @@
 
         <!-- Logo -->
         <div class="logo">
-            <i class="bi bi-truck"></i>
-            <span>Hotel management</span>
+            <i class="bi bi-house-door"></i>
+            <span>Hotel Management</span>
         </div>
 
         <!-- Menu -->
@@ -41,30 +39,41 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="bi bi-truck"></i>
-                    <span>Rooms</span>
+                <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#staffMenu"
+                    aria-expanded="false">
+                    <i class="bi bi-house-door"></i>
+                    <span>Room Management</span>
+                    <i class="bi bi-chevron-down dropdown-indicator"></i>
                 </a>
+                <div class="collapse" id="staffMenu">
+                    <ul class="nav flex-column sub-menu">
+                        <li><a href="addroom.php">Add Room</a></li>
+                        <li><a href="room_list.php">Room List</a></li>
+                        <li><a href="room_types.php">Room Types</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#staffMenu"
+                    aria-expanded="false">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Staff Management</span>
+                    <i class="bi bi-chevron-down dropdown-indicator"></i>
+                </a>
+                <div class="collapse" id="staffMenu">
+                    <ul class="nav flex-column sub-menu">
+                        <li><a href="#">Add Staff</a></li>
+                        <li><a href="#">Staff List</a></li>
+                        <li><a href="#">Roles</a></li>
+                    </ul>
+                </div>
             </li>
 
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="bi bi-person-badge"></i>
-                    <span>Drivers</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="bi bi-box-seam"></i>
-                    <span>Shipments</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="bi bi-receipt"></i>
-                    <span>Challans</span>
+                    <i class="bi bi-calendar-check"></i>
+                    <span>Booking/Reservation</span>
                 </a>
             </li>
 
@@ -76,17 +85,19 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="bi bi-people"></i>
-                    <span>Parties</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#reportsMenu"
+                    aria-expanded="false">
                     <i class="bi bi-bar-chart"></i>
                     <span>Reports</span>
+                    <i class="bi bi-chevron-down dropdown-indicator"></i>
                 </a>
+                <div class="collapse" id="reportsMenu">
+                    <ul class="nav flex-column sub-menu">
+                        <li><a href="#">Daily</a></li>
+                        <li><a href="#">Monthly</a></li>
+                        <li><a href="#">Financial</a></li>
+                    </ul>
+                </div>
             </li>
 
             <hr>
@@ -109,12 +120,20 @@
 
     </div>
 
-
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                const indicator = this.querySelector('.dropdown-indicator');
+                if (!indicator) return;
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                indicator.classList.toggle('bi-chevron-down', !expanded);
+                indicator.classList.toggle('bi-chevron-up', expanded);
+            });
+        });
+    </script>
 
 </body>
 
 </html>
-
