@@ -1,6 +1,6 @@
 <?php include("include/header.php"); ?>
 
-<div class="container mt-4 d-flex justify-content-center" style="margin-left: 260px; width: calc(100% - 260px); max-width: none;">
+<div class="container d-flex justify-content-center" style="margin-top: 70px; margin-left: 260px; width: calc(100% - 260px); max-width: none;">
     <div class="card shadow-sm border-0" style="width: 100%; max-width: 920px;">
         <div class="card-header bg-primary text-white">
             <h4 class="mb-0">Add New Room</h4>
