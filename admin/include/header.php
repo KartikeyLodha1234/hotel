@@ -114,13 +114,33 @@
                     <span>Logout</span>
                 </a>
             </li>
-
+    
             </ul>
 
         </div>
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
+                const indicator = toggle.querySelector('.dropdown-indicator');
+                if (!indicator) return;
+
+                const updateIcon = function() {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    indicator.classList.remove('bi-chevron-down', 'bi-chevron-up');
+                    indicator.classList.add(expanded ? 'bi-chevron-up' : 'bi-chevron-down');
+                };
+
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
+
+                toggle.addEventListener('shown.bs.collapse', updateIcon);
+                toggle.addEventListener('hidden.bs.collapse', updateIcon);
+                updateIcon();
+            });
+        </script>
 
     </body>
 
