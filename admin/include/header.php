@@ -20,128 +20,162 @@
     <body>
 
         <!-- SIDEBAR -->
-        <div class="sidebar">
+        <nav class="sidebar" id="sidebarNav">
+            <div class="sidebar-brand">
+                <i class="bi bi-grid-3x3-gap-fill"></i> Hotel management
+            </div>
+            <div class="nav flex-column">
+                <a href="#" class="nav-link active">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+                <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people"></i> Room Managements
+                </a>
 
-            <!-- Logo -->
-            <div class="logo">
-                <i class="bi bi-house-door"></i>
-                <span>Hotel Management</span>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">Add Room</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">View Rooms</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Room Categories</a>
+                    </li>
+                </ul>
+            </div>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-bar-chart-line"></i> Report
+                </a>
+                <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-people"></i> Staff Managements
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">Add Staff</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">View Staff</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Staff Roles</a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Menu -->
-            <ul class="nav flex-column">
+                <a href="#" class="nav-link">
+                    <i class="bi bi-box-seam"></i> Products
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </div>
+        </nav>
 
-                <li class="nav-item">
-                    <a href="index.php" class="nav-link active">
-                        <i class="bi bi-speedometer2"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+        <!-- overlay for mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#roomMenu"
-                        aria-expanded="false">
-                        <i class="bi bi-house-door"></i>
-                        <span>Room Management</span>
-                        <i class="bi bi-chevron-down dropdown-indicator"></i>
-                    </a>
-                    <div class="collapse" id="roomMenu">
-                        <ul class="nav flex-column sub-menu">
-                            <li><a href="addroom.php">Add Room</a></li>
-                            <li><a href="room_list.php">Room List</a></li>
-                            <li><a href="room_types.php">Room Types</a></li>
-                        </ul>
-                    </div>
-                </li>
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
 
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#staffMenu"
-                        aria-expanded="false">
-                        <i class="bi bi-people-fill"></i>
-                        <span>Staff Management</span>
-                        <i class="bi bi-chevron-down dropdown-indicator"></i>
-                    </a>
-                    <div class="collapse" id="staffMenu">
-                        <ul class="nav flex-column sub-menu">
-                            <li><a href="staff_add.php">Add Staff</a></li>
-                            <li><a href="staff_list.php">Staff List</a></li>
-                            <li><a href="staff_roles.php">Roles</a></li>
-                        </ul>
-                    </div>
-                </li>
+            <!-- TOP NAVBAR -->
+            <header class="top-navbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="navbar-toggler-side" id="sidebarToggle" type="button">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center gap-3">
 
-                <li class="nav-item">
-                    <a href="booking.php" class="nav-link">
-                        <i class="bi bi-calendar-check"></i>
-                        <span>Booking/Reservation</span>
-                    </a>
-                </li>
+    <!-- Search -->
+    <i class="bi bi-search text-secondary"
+       style="font-size: 1.2rem; cursor: pointer;"></i>
 
-                <li class="nav-item">
-                    <a href="expenses.php" class="nav-link">
-                        <i class="bi bi-wallet2"></i>
-                        <span>Expenses</span>
-                    </a>
-                </li>
+    <!-- Notifications -->
+    <i class="bi bi-bell text-secondary"
+       style="font-size: 1.2rem; cursor: pointer;"></i>
 
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link nav-dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#reportsMenu"
-                        aria-expanded="false">
-                        <i class="bi bi-bar-chart"></i>
-                        <span>Reports</span>
-                        <i class="bi bi-chevron-down dropdown-indicator"></i>
-                    </a>
-                    <div class="collapse" id="reportsMenu">
-                        <ul class="nav flex-column sub-menu">
-                            <li><a href="reports_daily.php">Daily</a></li>
-                            <li><a href="reports_monthly.php">Monthly</a></li>
-                            <li><a href="reports_financial.php">Financial</a></li>
-                        </ul>
-                    </div>
-                </li>
+    <!-- Admin Dropdown -->
+    <div class="dropdown">
+        <button
+            class="btn p-0 border-0 bg-transparent d-flex align-items-center gap-2"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+        >
+            <div class="avatar-icon">
+                <i class="bi bi-person-fill"></i>
+            </div>
 
-                <hr>
+            <span class="d-none d-sm-inline text-secondary small">
+                Admin
+            </span>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="bi bi-gear"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
-   <li class="nav-item">
-                <a href="#" class="nav-link logout">
-                    <i class="bi bi-box-arrow-right"></i>
-                    <span>Logout</span>
+            <i class="bi bi-chevron-down text-secondary small"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+
+            <li>
+                <div class="px-3 py-2">
+                    <div class="fw-semibold">Admin</div>
+                    <small class="text-muted">Administrator</small>
+                </div>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <a class="dropdown-item" href="/admin/dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
                 </a>
             </li>
-    
-            </ul>
+
+            <li>
+                <a class="dropdown-item" href="/admin/profile">
+                    <i class="bi bi-person me-2"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item" href="/admin/users">
+                    <i class="bi bi-people me-2"></i>
+                    Manage Users
+                </a>
+            </li>
+
+            <li>
+                <a class="dropdown-item" href="/admin/settings">
+                    <i class="bi bi-gear me-2"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <a class="dropdown-item text-danger" href="/logout">
+                    <i class="bi bi-box-arrow-right me-2"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+            </header>
 
         </div>
 
-        <!-- Bootstrap JS -->
+        <!-- Bootstrap JS bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            document.querySelectorAll('.nav-dropdown-toggle').forEach(function(toggle) {
-                const indicator = toggle.querySelector('.dropdown-indicator');
-                if (!indicator) return;
-
-                const updateIcon = function() {
-                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-                    indicator.classList.remove('bi-chevron-down', 'bi-chevron-up');
-                    indicator.classList.add(expanded ? 'bi-chevron-up' : 'bi-chevron-down');
-                };
-
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                });
-
-                toggle.addEventListener('shown.bs.collapse', updateIcon);
-                toggle.addEventListener('hidden.bs.collapse', updateIcon);
-                updateIcon();
-            });
-        </script>
-
+        <script src="js/scripte.js"></script>
     </body>
 
     </html>
